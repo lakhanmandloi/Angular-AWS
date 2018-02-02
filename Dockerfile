@@ -11,22 +11,10 @@ RUN apt-get update
 
 # Install Dependencies
 RUN apt-get install -y build-essential \
-					   zlib1g-dev=1:1.2.8.dfsg-2ubuntu4.1 \
-					   locales=2.23-0ubuntu9 \
-					   curl \
-					   git \
-					   openjdk-8-jre \
-					   ssh \
-					   jq
+			zlib1g-dev \
+			locales \
+			curl
 					   
-# Install Ruby & Gems
-RUN apt-get install -y ruby-full=1:2.3.0+1
-RUN mkdir -p /usr/share/ruby
-COPY Gemfile /project/installations/
-COPY Gemfile.lock /project/installations/
-RUN gem install bundler --no-ri --no-rdoc
-RUN bundle install --system
-RUN gem clean
 
 # Install AWS-CLI
 RUN apt-get install -y python python-pip groff
