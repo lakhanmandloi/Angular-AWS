@@ -8,5 +8,10 @@ RUN \
 	apk --purge -v del py-pip && \
 	rm /var/cache/apk/*
 
-RUN npm install @angular/cli
+RUN npm install -g @angular/cli
 RUN ng -v
+
+WORKDIR project/installations/
+COPY package.json /project/installations/
+COPY package-lock.json /project/installations/
+RUN npm install
