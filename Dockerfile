@@ -23,7 +23,9 @@ RUN pip install awscli
 
 # Install NPM
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -y nodejs
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli  
+
+RUN ng -v
 
 # Environment Setup
 ENV TZ=Asia/Calcutta
