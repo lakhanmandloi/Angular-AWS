@@ -7,7 +7,7 @@ RUN \
 	pip install awscli && \
 	apk --purge -v del py-pip && \
 	rm /var/cache/apk/*
-
+RUN chown -R $(whoami) /usr/local/lib/node_modules
 RUN npm install -g @angular/cli
 RUN ng -v
 
