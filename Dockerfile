@@ -20,5 +20,5 @@ RUN pip install --upgrade pip
 RUN pip install awscli
 
 # Install NPM
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - && apt-get install -y nodejs
 RUN npm install -g @angular/cli  
