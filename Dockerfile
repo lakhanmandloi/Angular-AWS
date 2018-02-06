@@ -12,6 +12,6 @@ RUN npm install -g @angular/cli
 RUN ng -v
 
 WORKDIR project/installations/
-COPY package.json /project/installations/
-COPY package-lock.json /project/installations/
+COPY https://raw.githubusercontent.com/lakhanmandloi/Angular-AWS/master/package.json /project/installations/
+COPY https://raw.githubusercontent.com/lakhanmandloi/Angular-AWS/master/package-lock.json /project/installations/
 RUN npm install
