@@ -8,4 +8,5 @@ RUN \
 	apk --purge -v del py-pip && \
 	rm /var/cache/apk/*
 
-RUN node -v
+RUN npm install @angular/cli
+RUN ng -v
